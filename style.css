@@ -1,0 +1,29 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: auto;
+}
+
+.output {
+  height: 50px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  padding: 5px;
+  text-align: right;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.button {
+  flex: 1 0 25%;
+  height: 40px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
