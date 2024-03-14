@@ -17,3 +17,22 @@ function divide(a, b) {
   }
   return a / b;
 }
+
+let firstNumber = null;
+let operator = null;
+let secondNumber = null;
+
+function operate(firstNumber, operator, secondNumber) {
+  if ((operator = add)) {
+    return add(firstNumber, secondNumber);
+  }
+  if ((operator = subtract)) {
+    return subtract(firstNumber, secondNumber);
+  }
+  if ((operator = multiply)) {
+    return multiply(firstNumber, secondNumber);
+  }
+  if ((operator = divide)) {
+    return divide(firstNumber, secondNumber);
+  }
+}
