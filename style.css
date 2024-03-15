@@ -27,3 +27,23 @@
   align-items: center;
   cursor: pointer;
 }
+
+.buttonEqual {
+  flex: 1 0 25%;
+  height: 40px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.buttonOperator {
+  flex: 1 0 25%;
+  height: 40px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

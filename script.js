@@ -23,7 +23,7 @@ let operator = null;
 let secondNumber = null;
 
 function operate(firstNumber, operator, secondNumber) {
-  if ((operator = add)) {
+  if ((operator = "+")) {
     return add(firstNumber, secondNumber);
   }
   if ((operator = subtract)) {
@@ -46,6 +46,20 @@ function updateDisplay(value) {
 
 document.querySelectorAll(".button").forEach((button) => {
   button.addEventListener("click", () => {
+    updateDisplay(button.textContent);
+  });
+});
+document.querySelectorAll(".buttonOperator").forEach((button) => {
+  button.addEventListener("click", () => {
+    firstNumber = displayValue;
+    operator = button.textContent;
+    updateDisplay(button.textContent);
+  });
+});
+
+document.querySelector(".buttonEqual").forEach((button) => {
+  button.addEventListener("click", () => {
+    secondNumber = displayValue;
     updateDisplay(button.textContent);
   });
 });
