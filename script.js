@@ -36,3 +36,16 @@ function operate(firstNumber, operator, secondNumber) {
     return divide(firstNumber, secondNumber);
   }
 }
+
+let displayValue = "";
+
+function updateDisplay(value) {
+  displayValue += value;
+  document.getElementById("output").textContent = displayValue;
+}
+
+document.querySelectorAll(".button").forEach((button) => {
+  button.addEventListener("click", () => {
+    updateDisplay(button.textContent);
+  });
+});
