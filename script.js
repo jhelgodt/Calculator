@@ -39,27 +39,49 @@ function operate(firstNumber, operator, secondNumber) {
 
 let displayValue = "";
 
+console.log(firstNumber);
+console.log(operator);
+console.log(secondNumber);
+
 function updateDisplay(value) {
   displayValue += value;
   document.getElementById("output").textContent = displayValue;
+  console.log(firstNumber);
+  console.log(operator);
+  console.log(secondNumber);
+}
+function clearDisplay() {
+  displayValue = null;
+  document.getElementById("output").textContent = displayValue;
+  console.log(firstNumber);
+  console.log(operator);
+  console.log(secondNumber);
 }
 
 document.querySelectorAll(".button").forEach((button) => {
   button.addEventListener("click", () => {
+    if (firstNumber != null) clearDisplay();
+
     updateDisplay(button.textContent);
+    console.log(firstNumber);
+    console.log(operator);
+    console.log(secondNumber);
   });
 });
 document.querySelectorAll(".buttonOperator").forEach((button) => {
   button.addEventListener("click", () => {
     firstNumber = displayValue;
     operator = button.textContent;
-    updateDisplay(button.textContent);
+    console.log(firstNumber);
+    console.log(operator);
+    console.log(secondNumber);
   });
 });
 
-document.querySelector(".buttonEqual").forEach((button) => {
-  button.addEventListener("click", () => {
-    secondNumber = displayValue;
-    updateDisplay(button.textContent);
-  });
+document.querySelector(".buttonEqual").addEventListener("click", (button) => {
+  secondNumber = displayValue;
+  updateDisplay(button.textContent);
+  console.log(firstNumber);
+  console.log(operator);
+  console.log(secondNumber);
 });
