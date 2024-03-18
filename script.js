@@ -1,5 +1,5 @@
 function add(a, b) {
-  return a + b;
+  return Number(a) + Number(b);
 }
 
 function subtract(a, b) {
@@ -42,6 +42,7 @@ let displayValue = "";
 console.log(firstNumber);
 console.log(operator);
 console.log(secondNumber);
+console.log(operate(firstNumber, operator, secondNumber));
 
 function updateDisplay(value) {
   displayValue += value;
@@ -49,23 +50,31 @@ function updateDisplay(value) {
   console.log(firstNumber);
   console.log(operator);
   console.log(secondNumber);
+  console.log(operate(firstNumber, operator, secondNumber));
 }
 function clearDisplay() {
-  displayValue = null;
+  displayValue = "";
   document.getElementById("output").textContent = displayValue;
   console.log(firstNumber);
   console.log(operator);
   console.log(secondNumber);
+  console.log(operate(firstNumber, operator, secondNumber));
 }
 
 document.querySelectorAll(".button").forEach((button) => {
   button.addEventListener("click", () => {
-    if (firstNumber != null) clearDisplay();
+    if (firstNumber != null && secondNumber == null) {
+      clearDisplay();
+    }
+    if (operator != null) {
+      secondNumber = document.getElementById("output").textContent;
+    }
 
     updateDisplay(button.textContent);
     console.log(firstNumber);
     console.log(operator);
     console.log(secondNumber);
+    console.log(operate(firstNumber, operator, secondNumber));
   });
 });
 document.querySelectorAll(".buttonOperator").forEach((button) => {
@@ -75,13 +84,23 @@ document.querySelectorAll(".buttonOperator").forEach((button) => {
     console.log(firstNumber);
     console.log(operator);
     console.log(secondNumber);
+    console.log(operate(firstNumber, operator, secondNumber));
   });
 });
 
 document.querySelector(".buttonEqual").addEventListener("click", (button) => {
   secondNumber = displayValue;
-  updateDisplay(button.textContent);
+  clearDisplay();
+  document.getElementById("output").textContent = operate(
+    firstNumber,
+    operator,
+    secondNumber
+  );
+  firstNumber = null;
+  operator = null;
+  secondNumber = null;
   console.log(firstNumber);
   console.log(operator);
   console.log(secondNumber);
+  console.log(operate(firstNumber, operator, secondNumber));
 });
