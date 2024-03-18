@@ -3,19 +3,19 @@ function add(a, b) {
 }
 
 function subtract(a, b) {
-  return a - b;
+  return Number(a) - Number(b);
 }
 
 function multiply(a, b) {
-  return a * b;
+  return Number(a) * Number(b);
 }
 
 function divide(a, b) {
-  if (b === 0) {
+  if (b == 0) {
     console.error("Error: Division by zero is not allowed.");
     return null;
   }
-  return a / b;
+  return Number(a) / Number(b);
 }
 
 let firstNumber = null;
@@ -23,16 +23,16 @@ let operator = null;
 let secondNumber = null;
 
 function operate(firstNumber, operator, secondNumber) {
-  if ((operator = "+")) {
+  if (operator == "+") {
     return add(firstNumber, secondNumber);
   }
-  if ((operator = subtract)) {
+  if (operator == "-") {
     return subtract(firstNumber, secondNumber);
   }
-  if ((operator = multiply)) {
+  if (operator == "*") {
     return multiply(firstNumber, secondNumber);
   }
-  if ((operator = divide)) {
+  if (operator == "/") {
     return divide(firstNumber, secondNumber);
   }
 }
